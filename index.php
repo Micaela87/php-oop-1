@@ -38,13 +38,13 @@
 class Movie {
     public $title, $subtitle, $director;
 
-    public function __construct($title, $subtitle = "", $director = "") {
+    function __construct($title, $subtitle = "", $director = "") {
         $this -> title = $title;
         $this -> subtitle = $subtitle;
         $this -> director = $director;
     }
 
-    public function getFullTitle() {
+    function getFullTitle() {
         
         if ($this -> subtitle) {
             return "{$this -> title}: {$this -> subtitle}";
@@ -53,7 +53,7 @@ class Movie {
         return $this -> title;
     }
 
-    public function __toString() {
+    function __toString() {
 
         if ($this -> director) {
             return $this -> getFullTitle() . " | " . $this -> director;
